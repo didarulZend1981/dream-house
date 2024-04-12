@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { MContext } from "../../context/ContextComponent";
 
 
 const Navbar = () => {
+  const x =useContext(MContext);
+  console.log("jssdhnjndsjgn");
+
   const navLinks = <>
       <li><a><NavLink to="/" className={({isActive})=>
       isActive? 'text-primary font-blod':'font-bold'

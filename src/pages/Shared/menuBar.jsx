@@ -1,6 +1,7 @@
 import React from 'react';
 
 const menuBar = () => {
+  
   return (
     <>
     <li><a><NavLink to="/">Home</NavLink></a></li>

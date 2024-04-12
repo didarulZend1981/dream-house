@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { MContext } from "../../context/ContextComponent";
 
 
 const Banner = () => {
+  const {topPrice} = useContext(MContext);
+  console.log(topPrice);
   return (
     <div><div className="carousel w-full h-[300px]">
     <div id="slide1" className="carousel-item relative w-full">
