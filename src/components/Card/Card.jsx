@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { MContext } from "../../context/ContextComponent";
 
 
 const Card = ({ realState }) => {
+  const { addToCart,addToWishlist} = useContext(MContext);
+ 
+ 
   const { id,relevantImage,estateTitle,price } = realState;
-  console.log(id);
+  
   return (
     <div className="card w-90 bg-base-100 shadow-xl">
           <figure><img src={relevantImage} alt="Shoes" className="h-[200px] min-w-full" /></figure>
@@ -15,9 +20,11 @@ const Card = ({ realState }) => {
               <p>If a dog chews shoes whose shoes does he choose?</p>
               <div className="card-actions justify-end border-t-2 py-5 mt-5">
                   <div className="badge badge-outline">Price:{price}</div> 
-                  <div className="badge badge-outline"><NavLink to="/single">Details</NavLink></div> 
-                  <div className="badge badge-outline">Add to</div>
-                  <div className="badge badge-outline">Wishlist</div>
+                  
+                  <div className="badge badge-outline"><NavLink to={`/single/${id}`}>Details</NavLink></div> 
+                  <div className="badge badge-outline"><button onClick={() => addToCart({ id })}>Add to Cart</button></div>
+                  
+                  <div className="badge badge-outline"><button onClick={() => addToWishlist({ id })}>Wishlist</button></div>
                   
                   
               </div>

@@ -4,6 +4,8 @@ import Root from "../layouts/Root";
 import Single from "../pages/Single/Single";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import AddToState from "../pages/AddToState/AddToState";
+import WishToState from "../pages/WishToState/WishToState";
 
 
 const router = createBrowserRouter([
@@ -17,7 +19,7 @@ const router = createBrowserRouter([
           
       }, 
       {
-        path: '/single',
+        path:'/single/:id',
         element: <Single></Single>, 
         
       }, 
@@ -29,6 +31,16 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>, 
+        
+      },
+      {
+        path: '/addToState',
+        element: <AddToState></AddToState>, 
+        
+      },
+      {
+        path: '/wishToState',
+        element: <WishToState></WishToState>, 
         
       },
       

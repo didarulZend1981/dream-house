@@ -4,9 +4,19 @@ import { MContext } from "../../context/ContextComponent";
 
 
 const Navbar = () => {
-  const x =useContext(MContext);
-  console.log("jssdhnjndsjgn");
+  const {cartItems,wishlistItems} =useContext(MContext);
+  const cartItemsCount =cartItems.length;
+  const wishlistItemsCount =wishlistItems.length;
+  if(cartItemsCount>0){
+    const bage='<span className="text-[red] text-[25px]">{cartItemsCount}</span>';
+  }else{
 
+  }
+  if(wishlistItemsCount>0){
+    const bage='<span className="text-[red] text-[25px]">{wishlistItemsCount}</span>';
+  }else{
+    
+  }
   const navLinks = <>
       <li><a><NavLink to="/" className={({isActive})=>
       isActive? 'text-primary font-blod':'font-bold'
@@ -17,7 +27,15 @@ const Navbar = () => {
     <li><a><NavLink to="/register" className={({isActive})=>
       isActive? 'text-primary font-blod':'font-bold'
       }>register</NavLink></a></li>
-   
+    <li><a><NavLink to="/addToState" className={({isActive})=>
+      isActive? 'text-primary font-blod':'font-bold'
+      }>Add to State<span className="text-[red] text-[25px]">{cartItemsCount}</span></NavLink></a></li>
+
+     <li><a><NavLink to="/wishToState" className={({isActive})=>
+      isActive? 'text-primary font-blod':'font-bold'
+      }>Wish to State<span className="text-[red] text-[25px]">{wishlistItemsCount}</span></NavLink></a></li>
+
+      
     </>
   return (
     <div>
