@@ -6,12 +6,17 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import AddToState from "../pages/AddToState/AddToState";
 import WishToState from "../pages/WishToState/WishToState";
+import NotFound from "../pages/NotFound/NotFound";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<NotFound/>,
+   
+   
     children: [
       {
           path: '/',
@@ -20,7 +25,10 @@ const router = createBrowserRouter([
       }, 
       {
         path:'/single/:id',
-        element: <Single></Single>, 
+        element: <PrivateRoute>
+                    <Single></Single>
+               </PrivateRoute>
+        
         
       }, 
       {

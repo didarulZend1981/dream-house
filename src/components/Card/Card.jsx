@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MContext } from "../../context/ContextComponent";
 
 
@@ -21,7 +21,7 @@ const Card = ({ realState }) => {
               <div className="card-actions justify-end border-t-2 py-5 mt-5">
                   <div className="badge badge-outline">Price:{price}</div> 
                   
-                  <div className="badge badge-outline"><NavLink to={`/single/${id}`}>Details</NavLink></div> 
+                  <div className="badge badge-outline"><Link to={`/single/${id}`}>Details</Link></div> 
                   <div className="badge badge-outline"><button onClick={() => addToCart({ id })}>Add to Cart</button></div>
                   
                   <div className="badge badge-outline"><button onClick={() => addToWishlist({ id })}>Wishlist</button></div>

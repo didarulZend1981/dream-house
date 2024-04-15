@@ -8,6 +8,8 @@ const Single = () => {
   const {id} = useParams();
   const { realState, addToCart,addToWishlist} = useContext(MContext);
   const state = realState.find((p) => p.id === parseInt(id));
+  const idx=state.id;
+  console.log(idx);
   return (
     <>
          <div className="h-[70px]"></div>
@@ -20,9 +22,9 @@ const Single = () => {
               <br></br>
             <div className="badge badge-outline">Price:{state.price}</div> 
                   
-            <div className="badge badge-outline"><button onClick={() => addToCart({ id })}>Add to Cart</button></div>
+            <div className="badge badge-outline"><button onClick={() => addToCart({ idx })}>Add to Cart</button></div>
                   
-            <div className="badge badge-outline"><button onClick={() => addToWishlist({ id })}>Wishlist</button></div>
+            <div className="badge badge-outline"><button onClick={() => addToWishlist({ idx })}>Wishlist</button></div>
                   
             
             </div>

@@ -1,10 +1,12 @@
-import { useContext } from "react";
-import { NavLink } from "react-router-dom";
-import { MContext } from "../../context/ContextComponent";
+
+import { Link, NavLink } from "react-router-dom";
+
+import useAuth from "../../hooks/useAuth";
 
 
 const Navbar = () => {
-  const {cartItems,wishlistItems} =useContext(MContext);
+  const {cartItems,wishlistItems,user,logOut} =useAuth();
+  console.log(user);
   const cartItemsCount =cartItems.length;
   const wishlistItemsCount =wishlistItems.length;
   if(cartItemsCount>0){
@@ -18,25 +20,35 @@ const Navbar = () => {
     
   }
   const navLinks = <>
-      <li><a><NavLink to="/" className={({isActive})=>
-      isActive? 'text-primary font-blod':'font-bold'
-      }>Home</NavLink></a></li>
-    <li><a><NavLink to="/login" className={({isActive})=>
-      isActive? 'text-primary font-blod':'font-bold'
-      }>Login</NavLink></a></li>
-    <li><a><NavLink to="/register" className={({isActive})=>
-      isActive? 'text-primary font-blod':'font-bold'
-      }>register</NavLink></a></li>
-    <li><a><NavLink to="/addToState" className={({isActive})=>
-      isActive? 'text-primary font-blod':'font-bold'
-      }>Add to State<span className="text-[red] text-[25px]">{cartItemsCount}</span></NavLink></a></li>
+        
 
-     <li><a><NavLink to="/wishToState" className={({isActive})=>
+
+      <li><NavLink to="/" className={({isActive})=>
       isActive? 'text-primary font-blod':'font-bold'
-      }>Wish to State<span className="text-[red] text-[25px]">{wishlistItemsCount}</span></NavLink></a></li>
+      }>Home</NavLink></li>
+    <li><NavLink to="/login" className={({isActive})=>
+      isActive? 'text-primary font-blod':'font-bold'
+      }>Login</NavLink></li>
+    <li><NavLink to="/register" className={({isActive})=>
+      isActive? 'text-primary font-blod':'font-bold'
+      }>register</NavLink></li>
+    <li><NavLink to="/addToState" className={({isActive})=>
+      isActive? 'text-primary font-blod':'font-bold'
+      }>Add to State<span className="text-[red] text-[25px]">{cartItemsCount}</span></NavLink></li>
+
+     <li><NavLink to="/wishToState" className={({isActive})=>
+      isActive? 'text-primary font-blod':'font-bold'
+      }>Wish to State<span className="text-[red] text-[25px]">{wishlistItemsCount}</span></NavLink></li>
 
       
     </>
+
+    const handleSignOut = () => {
+      logOut()
+          .then()
+          .catch()
+    }
+
   return (
     <div>
       <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10 h-[40px]">
@@ -57,11 +69,30 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+  {
+    user?.email?
+    <button onClick={handleSignOut} className="btn">
+      <img src={user?.photoURL||"not found"}/>
+      <sapn>{user?.displayName||"not name"}</sapn>
+      Sign Out
+    </button>
+    :
+
+    
+    <Link to="/login">
+      <button className="btn">Login</button>
+      </Link>
+      
+
+
+  }
+  
+
   </div>
 </div>
     </div>
   );
+  console.log(user);
 };
 
 export default Navbar;
