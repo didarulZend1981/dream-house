@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import SocialLogin from "../Login/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 // import { runTransaction } from "firebase/database";
-
+import { toast } from 'react-toastify';
 
 const Register = () => {
   const { createUser,updateUserProfile,user } =useAuth();
@@ -31,10 +31,14 @@ const Register = () => {
             navigate(from);
           }
         })
+
+        toast.success('successfully create');
        
     })
     .catch(error => {
-        console.error(error)
+      console.log(user.password);
+        // console.error(error)
+        // toast.error('Error: ' + error.message);
     })
   }
  
@@ -78,11 +82,17 @@ const Register = () => {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clipRule="evenodd" /></svg>
           <input type="password" className="grow" 
           
-          {...register("password", { required: true })}
+          {...register("password", { required: true, minLength: 6, pattern: /^(?=.*[a-z])(?=.*[A-Z])/ })}
           />
           
           </label>
-          {errors.password && <span>This field is required</span>}
+          
+          
+         
+          {errors.password && errors.password.type === 'required' && <p>Password is required</p>}
+          
+          {errors.password && errors.password.type === 'minLength' && <p>{ toast.error('Password must be at least 6 characters long')}</p>}
+          {errors.password && errors.password.type === 'pattern' && <p>{ toast.error('Password must contain at least one uppercase letter and one lowercase letter')}</p>}
           
           <button className="btn btn-outline btn-success">Register</button>
 

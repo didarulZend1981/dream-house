@@ -7,9 +7,18 @@ import { MContext } from "../../context/ContextComponent";
 const Single = () => {
   const {id} = useParams();
   const { realState, addToCart,addToWishlist} = useContext(MContext);
+
   const state = realState.find((p) => p.id === parseInt(id));
   const idx=state.id;
-  console.log(idx);
+  // console.log(idx);
+  const handleAddToCart = () => {
+    addToCart(state);
+  };
+  const handleAddWishlist = () => {
+    addToWishlist(state);
+  };
+
+  
   return (
     <>
          <div className="h-[70px]"></div>
@@ -22,9 +31,9 @@ const Single = () => {
               <br></br>
             <div className="badge badge-outline">Price:{state.price}</div> 
                   
-            <div className="badge badge-outline"><button onClick={() => addToCart({ idx })}>Add to Cart</button></div>
+            <div className="badge badge-outline"><button onClick={handleAddToCart}>Add to Cart</button></div>
                   
-            <div className="badge badge-outline"><button onClick={() => addToWishlist({ idx })}>Wishlist</button></div>
+            <div className="badge badge-outline"><button onClick={handleAddWishlist}>Wishlist</button></div>
                   
             
             </div>

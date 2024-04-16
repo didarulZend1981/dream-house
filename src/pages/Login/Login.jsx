@@ -4,28 +4,34 @@ import {Link, NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "./SocialLogin";
 import useAuth from "../../hooks/useAuth";
-
+import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { signIn } =useAuth();
   const { register,handleSubmit, formState: { errors } } = useForm();
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";
   console.log(from);
 
   const onSubmit = (data) => {
     const {email, password} = data;
-    signIn(email, password)
-    .then(result=>{
-      if(result.user){
-        navigate(from);
-      }
-     })
-    .catch(error => {
-        console.error(error);
-    })
+        signIn(email, password)
+        .then(result=>{
+          if(result.user){
+            navigate(from);
+          }
+          toast.success('Login successful');
+        })
+
+        .catch(error => {
+            // console.error(error);
+            const msg ='your email and password should match with the registered email and password If it doesnt match';
+            // console.log(error);
+            toast.error(msg);
+        })
+
     // console.log(email, password);
   };
   return (
@@ -62,6 +68,7 @@ const navigate = useNavigate();
 
           
       </form>
+
       <SocialLogin></SocialLogin>
       <p className="text-center">do not have account  <NavLink to="/register" className="text-[red]">Register</NavLink></p>
     </div>

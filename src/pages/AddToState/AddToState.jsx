@@ -3,7 +3,7 @@ import { MContext } from "../../context/ContextComponent";
 
 const AddToState = () => {
   const {cartItems} = useContext(MContext);
-  // console.log(cartItems);
+  console.log(cartItems);
   return (
     <div>
       <div className="h-[70px]"></div>

@@ -6,7 +6,7 @@ import { MContext } from "../../context/ContextComponent";
 const Card = ({ realState }) => {
   const { addToCart,addToWishlist} = useContext(MContext);
  
- 
+  //  console.log(realState);
   const { id,relevantImage,estateTitle,price } = realState;
   
   return (
