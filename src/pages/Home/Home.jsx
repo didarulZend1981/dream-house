@@ -7,6 +7,13 @@ import { MContext } from "../../context/ContextComponent";
 
 const Home = () => {
     const { realState } =useContext(MContext);
+
+    
+  useEffect(()=>{
+    document.title ="Home | State";
+  },[])
+
+
     // console.log(realState);
   return (
     <div>

@@ -6,6 +6,8 @@ import { GoogleAuthProvider } from "firebase/auth";
 export const MContext = createContext();
 
 function ContextComponent({children}){
+ 
+
   const [realState, setRealState] = useState([]);
   const [topPrice, setTopPrice] = useState([]);
 
@@ -112,6 +114,7 @@ function ContextComponent({children}){
       googleLogin,
       updateUserProfile,
       loading,
+     
       
     };
   // console.log(user);

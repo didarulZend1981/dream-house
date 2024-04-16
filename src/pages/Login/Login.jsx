@@ -6,8 +6,12 @@ import SocialLogin from "./SocialLogin";
 import useAuth from "../../hooks/useAuth";
 import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Login = () => {
+  useEffect(()=>{
+    document.title ="Login | State";
+  },[])
   const { signIn } =useAuth();
   const { register,handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();

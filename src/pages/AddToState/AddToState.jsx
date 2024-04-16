@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MContext } from "../../context/ContextComponent";
 
 const AddToState = () => {
   const {cartItems} = useContext(MContext);
   console.log(cartItems);
+  useEffect(()=>{
+    document.title ="Add To State | State";
+  },[])
   return (
     <div>
       <div className="h-[70px]"></div>

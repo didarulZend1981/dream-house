@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MContext } from "../../context/ContextComponent";
 
@@ -10,6 +10,7 @@ const Single = () => {
 
   const state = realState.find((p) => p.id === parseInt(id));
   const idx=state.id;
+  const name =state.estateTitle;
   // console.log(idx);
   const handleAddToCart = () => {
     addToCart(state);
@@ -17,7 +18,9 @@ const Single = () => {
   const handleAddWishlist = () => {
     addToWishlist(state);
   };
-
+  useEffect(()=>{
+    document.title =`${name} | state`
+  },[]);
   
   return (
     <>

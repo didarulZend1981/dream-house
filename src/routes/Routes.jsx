@@ -10,10 +10,13 @@ import NotFound from "../pages/NotFound/NotFound";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    element: 
+    
+    <Root></Root>,
     errorElement:<NotFound/>,
    
    

@@ -5,8 +5,12 @@ import SocialLogin from "../Login/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 // import { runTransaction } from "firebase/database";
 import { toast } from 'react-toastify';
+import { useEffect } from "react";
 
 const Register = () => {
+  useEffect(()=>{
+    document.title ="Register | State";
+  },[])
   const { createUser,updateUserProfile,user } =useAuth();
 
  
