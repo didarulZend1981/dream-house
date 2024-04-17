@@ -2,6 +2,7 @@
   {
     "id": 1,
     "relevantImage": "https://i.ibb.co/R0SQ7QN/1.jpg",
+    "banner": "https://i.ibb.co/J2Sbs45/6.jpg",
     "estateTitle": "Cozy Single-family Home",
     "segmentName": "Single-family homes",
     "description": "This charming single-family home is nestled in a tranquil neighborhood, providing the perfect retreat from the hustle and bustle of city life. Boasting spacious living areas, including a welcoming living room ideal for family gatherings, and a modern kitchen equipped with state-of-the-art appliances. The property also features a private backyard oasis, offering a serene outdoor space for relaxation or entertaining guests. With its convenient location and inviting ambiance, this home provides an exceptional opportunity for comfortable and peaceful living. Don't miss the chance to make this cozy retreat your own!",
@@ -17,6 +18,7 @@
   {
     "id": 2,
     "relevantImage": "https://i.ibb.co/x8hxM62/2.jpg",
+    "banner": "https://i.ibb.co/qk0zbCS/5.jpg",
     "estateTitle": "Luxurious Townhouse",
     "segmentName": "Townhouses",
     "description": "Step into luxury with this stunning townhouse offering unparalleled elegance and sophistication. From the moment you enter, you'll be captivated by the spacious living areas, featuring high ceilings and designer finishes throughout. The gourmet kitchen is a chef's dream, equipped with top-of-the-line appliances and ample counter space for culinary creations. Retreat to the private outdoor oasis, complete with a sparkling pool and lush landscaping, perfect for entertaining or enjoying quiet moments of relaxation. With its prime location and luxurious amenities, this townhouse presents a rare opportunity for refined living at its finest.",
@@ -32,6 +34,7 @@
   {
     "id": 3,
     "relevantImage": "https://i.ibb.co/BZ13wFv/3.jpg",
+    "banner": "https://i.ibb.co/QdnDKvn/4.jpg",
     "estateTitle": "Modern Apartment",
     "segmentName": "Apartments",
     "description": "Experience modern city living at its best in this stylish apartment boasting breathtaking city views. The open-plan layout creates a seamless flow between the living and dining areas, perfect for both relaxation and entertaining. The fully equipped kitchen features sleek cabinetry and premium appliances, providing an ideal space for culinary enthusiasts. Residents have access to a range of communal amenities, including a fitness center and rooftop terrace, offering the ultimate urban lifestyle. With its prime location and contemporary design, this apartment presents a unique opportunity for sophisticated city living.",
@@ -47,6 +50,7 @@
   {
     "id": 4,
     "relevantImage": "https://i.ibb.co/QdnDKvn/4.jpg",
+    "banner": "https://i.ibb.co/BZ13wFv/3.jpg",
     "estateTitle": "Student Housing",
     "segmentName": "Student housing",
     "description": "Ideal for students seeking convenience and comfort, this student housing offers a supportive environment for academic success. The spacious living area provides ample space for studying or socializing, while the shared kitchen is equipped with essential appliances for preparing meals. With its proximity to campus and affordable rates, this housing option is perfect for students looking for a home away from home.",
@@ -62,6 +66,7 @@
   {
     "id": 5,
     "relevantImage": "https://i.ibb.co/qk0zbCS/5.jpg",
+    "banner": "https://i.ibb.co/x8hxM62/2.jpg",
     "estateTitle": "Senior Living Community",
     "segmentName": "Senior living communities",
     "description": "Embrace retirement living at its finest in this senior living community offering an array of amenities and services tailored to your needs. From social activities to wellness programs, residents can enjoy a fulfilling lifestyle surrounded by peers. The clubhouse serves as a hub for socializing and recreation, while the swimming pool provides a refreshing oasis for relaxation. With its focus on community and well-being, this senior living community offers a vibrant and enriching environment for your golden years.",
@@ -77,6 +82,7 @@
   {
     "id": 6,
     "relevantImage": "https://i.ibb.co/J2Sbs45/6.jpg",
+    "banner": "https://i.ibb.co/R0SQ7QN/1.jpg",
     "estateTitle": "Beachfront Vacation Rental",
     "segmentName": "Vacation rentals",
     "description": "Escape to paradise with this beachfront vacation rental offering unparalleled ocean views and luxurious amenities. The spacious living areas are tastefully furnished for comfort and relaxation, while the private pool and sundeck provide the perfect setting for soaking up the sun. With direct beach access, this rental is ideal for beach lovers and outdoor enthusiasts seeking the ultimate coastal getaway.",
