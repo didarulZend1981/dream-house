@@ -1,7 +1,8 @@
 import { createUserWithEmailAndPassword,onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebaseConfig";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider,GithubAuthProvider } from "firebase/auth";
+
 
 export const MContext = createContext();
 
@@ -18,6 +19,12 @@ function ContextComponent({children}){
   //  social provider
   const googleProvider = new GoogleAuthProvider();
   // -------------------
+//  social provider
+const gitHubProvider = new GithubAuthProvider();
+
+// -------------------
+
+
   const addToCart = (item) => {
     const isExit = cartItems.find(b=>b.id===item.id);
     if(!isExit){
@@ -78,6 +85,12 @@ function ContextComponent({children}){
       setLoading(true)
         return signInWithPopup(auth, googleProvider);
      }
+     //GitHub
+     
+     const gitHubLogin =() =>{
+      setLoading(true)
+        return signInWithPopup(auth, gitHubProvider);
+     }
      //
      const logOut = () => {
       setUser(null);
@@ -112,6 +125,7 @@ function ContextComponent({children}){
       signIn,
       logOut,
       googleLogin,
+      gitHubLogin,
       updateUserProfile,
       loading,
      

@@ -32,6 +32,11 @@ const Navbar = () => {
     <li><NavLink to="/register" className={({isActive})=>
       isActive? 'text-primary font-blod':'font-bold'
       }>register</NavLink></li>
+
+    <li><NavLink to="/about" className={({isActive})=>
+      isActive? 'text-primary font-blod':'font-bold'
+      }>About</NavLink></li>
+
     <li><NavLink to="/addToState" className={({isActive})=>
       isActive? 'text-primary font-blod':'font-bold'
       }>Add to State<span className="text-[red] text-[25px]">{cartItemsCount}</span></NavLink></li>
@@ -43,11 +48,7 @@ const Navbar = () => {
       
     </>
 
-    const handleSignOut = () => {
-      logOut()
-          .then()
-          .catch()
-    }
+ 
 
   return (
     <div>
@@ -61,32 +62,55 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">Dream-House</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       {navLinks}
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="dropdown">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+        <Link to="/login">
+      <img alt="Tailwind CSS Navbar component"  src={user?.photoURL||"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+    
+      </Link>
+              </div>
+      </div>
+     
   {
-    user?.email?
-    <button onClick={handleSignOut} className="btn">
-      <img src={user?.photoURL||"not found"}/>
-      <sapn>{user?.displayName||"not name"}</sapn>
-      Sign Out
-    </button>
+    
+    user?<ul tabIndex={0} className="z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        
+    <li>
+      <a className="justify-between">
+        Profile-{user?.displayName}
+       </a>
+    </li>
+    <li>
+     
+      <NavLink to="/updateUser">Settings</NavLink>
+      
+    </li>
+    <li onClick={logOut}><a>Logout</a></li>
+    
+    
+
+   
+</ul>
+    
+    
     :
 
     
-    <Link to="/login">
-      <button className="btn">Login</button>
-      </Link>
+    ''
       
 
 
   }
   
+ 
 
   </div>
 </div>

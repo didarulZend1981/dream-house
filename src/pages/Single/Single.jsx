@@ -26,10 +26,15 @@ const Single = () => {
     <>
          <div className="h-[70px]"></div>
          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          baner
+         </div>
+
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div><img src={state.relevantImage}/></div>
             
             
             <div>{state.description}
+            {console.log(state.location.latitude)}
             
               <br></br>
             <div className="badge badge-outline">Price:{state.price}</div> 
@@ -40,6 +45,11 @@ const Single = () => {
                   
             
             </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+             
+
           </div>
     </>
    

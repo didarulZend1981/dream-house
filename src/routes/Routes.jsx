@@ -8,6 +8,8 @@ import AddToState from "../pages/AddToState/AddToState";
 import WishToState from "../pages/WishToState/WishToState";
 import NotFound from "../pages/NotFound/NotFound";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import UpdateUser from "../pages/UpdateUser/UpdateUser";
+import About from "../pages/About/About";
 
 
 
@@ -52,6 +54,19 @@ const router = createBrowserRouter([
       {
         path: '/wishToState',
         element: <WishToState></WishToState>, 
+        
+      },
+      {
+        path: '/updateUser',
+        element: <UpdateUser></UpdateUser>, 
+        
+      },
+      {
+        path: '/about',
+        element:  
+        <PrivateRoute>
+                    <About></About>
+               </PrivateRoute>
         
       },
       

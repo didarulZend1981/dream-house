@@ -20,8 +20,11 @@ const Home = () => {
       <div className="h-16"></div>
       <Banner></Banner>
       <div className="grid grid-cols-3 gap-5 mt-20 mb-20">
+        <h2 className="text-center text-[20px]">Buy/Rent Home:</h2>
+      </div>
+      <div className="grid grid-cols-3 gap-5 mt-20 mb-20">
     
-
+   
      
 
       {
