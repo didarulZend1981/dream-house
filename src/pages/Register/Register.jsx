@@ -3,6 +3,8 @@ import {Link, NavLink, Navigate, useLocation, useNavigate } from "react-router-d
 import { useForm } from "react-hook-form";
 import SocialLogin from "../Login/SocialLogin";
 import useAuth from "../../hooks/useAuth";
+import { FaEye } from "react-icons/fa";
+import { MdAppRegistration } from "react-icons/md";
 // import { runTransaction } from "firebase/database";
 import { toast } from 'react-toastify';
 import { useEffect, useState } from "react";
@@ -90,7 +92,7 @@ const Register = () => {
           
           {...register("password", { required: true, minLength: 6, pattern: /^(?=.*[a-z])(?=.*[A-Z])/ })}
           />
-           <span onClick={()=>setShowPassword(!showPassword)}>show</span>
+           <span onClick={()=>setShowPassword(!showPassword)}><FaEye /></span>
           </label>
           
           
@@ -100,7 +102,7 @@ const Register = () => {
           {errors.password && errors.password.type === 'minLength' && <p>{ toast.error('Password must be at least 6 characters long')}</p>}
           {errors.password && errors.password.type === 'pattern' && <p>{ toast.error('Password must contain at least one uppercase letter and one lowercase letter')}</p>}
           
-          <button className="btn btn-outline btn-success">Register</button>
+          <button className="btn btn-outline btn-success"><MdAppRegistration  className="text-[red]"/> Register</button>
 
 
 
@@ -110,7 +112,7 @@ const Register = () => {
 <SocialLogin></SocialLogin>
 
 
-<p className="w-1/3 mx-auto text-center mt-3 border-t-2 pt-5">You have account  <NavLink to="/login" className="text-[red]">Login</NavLink></p>
+<p className="w-1/3 mx-auto text-center mt-3 border-t-2 pt-5 mb-[20px]">You have account  <NavLink to="/login" className="text-[red]">Login</NavLink></p>
     </div>
     
   );

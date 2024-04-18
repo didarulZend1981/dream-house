@@ -10,6 +10,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import UpdateUser from "../pages/UpdateUser/UpdateUser";
 import About from "../pages/About/About";
+import Profile from "../pages/Profile/Profile";
 
 
 
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
       {
         path: '/updateUser',
         element: <UpdateUser></UpdateUser>, 
+        
+      },
+      {
+        path: '/profile',
+        element: <Profile></Profile>, 
         
       },
       {

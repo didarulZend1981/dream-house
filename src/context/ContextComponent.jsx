@@ -24,6 +24,16 @@ const gitHubProvider = new GithubAuthProvider();
 
 // -------------------
 
+    const removeCart = (item) => {
+      const newCartItems = [...cartItems];
+      newCartItems.splice(item, 1);
+      setCartItems(newCartItems);
+    };
+    const removeWish = (item) => {
+      const newCartItems = [...wishlistItems];
+      newCartItems.splice(item, 1);
+      setWishlistItems(newCartItems);
+    };
 
   const addToCart = (item) => {
     const isExit = cartItems.find(b=>b.id===item.id);
@@ -128,6 +138,8 @@ const gitHubProvider = new GithubAuthProvider();
       gitHubLogin,
       updateUserProfile,
       loading,
+      removeCart,
+      removeWish,
      
       
     };

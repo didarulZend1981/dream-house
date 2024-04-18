@@ -2,7 +2,9 @@
 import { Link, NavLink } from "react-router-dom";
 
 import useAuth from "../../hooks/useAuth";
-
+import { IoIosSettings } from "react-icons/io";
+import { CgProfile } from "react-icons/cg";
+import { IoIosLogOut } from "react-icons/io";
 
 const Navbar = () => {
   const {cartItems,wishlistItems,user,logOut} =useAuth();
@@ -70,30 +72,35 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-        <Link to="/login">
-      <img alt="Tailwind CSS Navbar component"  src={user?.photoURL||"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
-    
-      </Link>
-              </div>
-      </div>
+  <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+              <Link to="/login">
+            <img alt="Tailwind CSS Navbar component"  src={user?.photoURL||"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+          
+            </Link>
+                    </div>
+            </div>
+
+      
      
   {
     
     user?<ul tabIndex={0} className="z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
         
-    <li>
-      <a className="justify-between">
-        Profile-{user?.displayName}
-       </a>
-    </li>
-    <li>
+    <li className="flex gap-2">
+        <NavLink to="/profile"><CgProfile /><span>Profile-{user?.displayName}</span></NavLink>
+      </li>
+    <li className="flex gap-2">
      
-      <NavLink to="/updateUser">Settings</NavLink>
+      <NavLink to="/updateUser"><IoIosSettings/><span>Settings</span></NavLink>
       
     </li>
-    <li onClick={logOut}><a>Logout</a></li>
+    <li className="flex gap-2">
+     
+      <sapn><IoIosLogOut/><li onClick={logOut}>Logout</li></sapn>
+      
+    </li>
+    {/* <li onClick={logOut} className="flex gap-2"><IoIosLogOut/><span>Logout</span></li> */}
     
     
 
@@ -104,7 +111,9 @@ const Navbar = () => {
     :
 
     
-    ''
+    <div>
+          
+    </div>
       
 
 
